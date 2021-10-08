@@ -5,7 +5,10 @@
 Logged in as {{ user.username }}
 
 
-<a href="#">Log out</a>
+<form action="{% url 'logoutuser' %}" method="POST">
+	{% csrf_token %}
+	<button type="submit">Log Out</button>
+</form>
 
 {% else %}
 
