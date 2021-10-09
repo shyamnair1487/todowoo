@@ -24,7 +24,10 @@ urlpatterns = [
     path('login/', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
     #todo
+    path('', views.home, name='home'),
     path('create/', views.createtodo, name='createtodo'),
     path('current/', views.currenttodos, name='currenttodos'),
-    path('', views.home, name='home'),
+    # todo_pk is the name we're giving it - arbitrary  
+    path('todo/<int:todo_pk>', views.viewtodo, name='viewtodo'),
+    
 ]

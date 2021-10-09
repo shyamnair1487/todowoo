@@ -8,9 +8,9 @@ Current
 	{% for todo in todos %}
 
 	<li>{% if todo.important %}
-		<b>{{ todo.title }}</b>
+		<a href="{% url 'viewtodo' todo.id %}"><b>{{ todo.title }}</b></a>
 		{% else %}
-		{{ todo.title }}
+		<a href="{% url 'viewtodo' todo.id %}">{{ todo.title }}</a>
 		{% endif %}
 		{% if todo.memo %}
 		- {{ todo.memo }}
