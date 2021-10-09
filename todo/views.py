@@ -78,6 +78,14 @@ def completetodo(request, todo_pk):
 		todo.save()
 		return redirect('currenttodos')
 
+def deletetodo(request, todo_pk):
+
+	todo = get_object_or_404(Todo, pk=todo_pk, user = request.user)
+	if request.method=='POST':
+		# setting the datecompleted as current time 
+		todo.delete()
+		return redirect('currenttodos')
+
 
 def loginuser(request):
 
