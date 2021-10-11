@@ -3,16 +3,41 @@
 
 {% block content %}
 
+<div class="row justify-content-center mt-5">
+	<div class="col-md-5">
+    	<h1>Login</h1>
+    </div>
+</div>
+<div class="row justify-content-center mt-5">
+	{% if error %}
+	<div class="alert alert-danger" role="alert">
+		<h5>{{ error }}</h4>
+	</div>
+		
+	{% endif %}
 
-<h1>Login</h1>
 
-<h2>{{ error }}</h2>
+<!-- 
+	<form method="POST">
+		{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Login</button>
+	</form> -->
 
-<form method="POST">
-	{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Login</button>
-</form>
+	<form method="POST">
+		{% csrf_token %}
+		<div class="mb-3">
+		    <label for="username" class="form-label"> Username</label>
+		    <input type="form-text" name="username" class="form-control" id="username">
+		</div>
+		<div class="mb-3">
+		    <label for="password" class="form-label"> Confirm Password</label>
+		    <input type="password" name="password" class="form-control" id="password">
+		</div>
+		<button type="submit" class="btn btn-primary">Login</button>
+	</form>
+	<div class="text-center">Don't have an account? <a href="{% url 'signupuser' %}">Sign up here</a></div>
+</div>
 
 
 {% endblock %}
