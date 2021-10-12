@@ -33,6 +33,17 @@
 			</label>
 		</div>
 		<button type="submit" class="btn btn-primary">Save</button>
+		<!-- <button type="button" class="btn btn-success" onclick="$('#complete').onclick()">Complete</button>
+		<button type="button" class="btn btn-danger" onclick="$('#delete').onclick()">Delete</button> -->
+	</form>
+	<form method="POST" action="{% url 'completetodo' todo.id %}">
+		{% csrf_token %}
+		<button id="complete" type="submit" class="btn btn-success mt-2">Complete</button>
+	</form>
+
+	<form method="POST" action="{% url 'deletetodo' todo.id %}">
+		{% csrf_token %}
+		<button id="delete" type="submit" class="btn btn-danger mt-2">Delete</button>
 	</form>
 </div>
 
@@ -40,14 +51,8 @@
 
 
 
-<form method="POST" action="{% url 'completetodo' todo.id %}">
-	{% csrf_token %}
-	<button type="submit">Complete</button>
-</form>
 
-<form method="POST" action="{% url 'deletetodo' todo.id %}">
-	{% csrf_token %}
-	<button type="submit">Delete</button>
-</form>
+
+
 
 {% endblock %}
