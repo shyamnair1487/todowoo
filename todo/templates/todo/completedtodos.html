@@ -19,24 +19,6 @@
 		</ul>
 	</div>
 </div>
-<!-- <ul>
-	{% for todo in todos %}
 
-	<li>{% if todo.important %}
-		<a href="{% url 'viewtodo' todo.id %}"><b>{{ todo.title }}</b></a>
-		{% else %}
-		<a href="{% url 'viewtodo' todo.id %}">{{ todo.title }}</a>
-		{% endif %}
-		{% if todo.memo %}
-		- {{ todo.memo }}
-		{% endif %}
-		{{ todo.datecompleted|date:'M j Y H:i' }}
-	</li>
-	<br>
-
-	{% endfor %}
-
-</ul>
- -->
 
 {% endblock %}
